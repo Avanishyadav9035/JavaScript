@@ -22,13 +22,69 @@
 // }
 
 
-let num = 21
+// let num = 21
 
-if(num<0){
-    console.log("-ve")
+// if(num<0){
+//     console.log("-ve")
+// }
+// else if(num==0){
+//     console.log("zero")
+// } else{
+//     console.log("+ve")
+// }
+
+
+let n1 = 23;
+// let n2 = 23
+// let n3 = 23
+
+// if(n1 >= n2 && n1 >= n3)
+// {
+//     console.log(n1)
+// }
+// else if(n2 >= n1 && n2 >= n3)
+// {
+//     console.log(n2)
+// }
+// else{
+//     console.log(n3)
+// }
+// if(n1 > n2 && n1 > n3)
+// {
+//     console.log(n1)
+// }
+// else if(n2 > n1 && n2 > n3)
+// {
+//     console.log(n2)
+// }
+// // else
+// else if(n3 > n1 && n3 > n2)
+// {
+//     console.log(n3)
+// }
+
+// let password = prompt("Enter password")
+
+
+// if(password == "avanishyadav")
+// {
+//     console.log("Permission Granted")
+// }
+// else{
+//     console.log("Access Denied")
+// }
+
+let a = 60
+let b = 80
+let c = 60
+
+
+
+if(a + b + c == 180)
+{
+    console.log("Is a triangle")
 }
-else if(num==0){
-    console.log("zero")
-} else{
-    console.log("+ve")
+else
+{
+    console.log("Not a triangle")
 }
