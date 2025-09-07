@@ -59,9 +59,27 @@ console.log(removeDuplicates([1, 2, 2, 3, 3, 4, 4, 4, 5]))
 
 // Solution 3: Using reduce()
 
-function findMax(arr) {
-  return arr.reduce((max, num) => num > max ? num : max, arr[0]);
+// function findMax(arr) {
+//   return arr.reduce((max, num) => num > max ? num : max, arr[0]);
+// }
+
+// // Example
+// console.log(findMax([3, 8, 1, 5, 12])); // 12
+
+
+//reverse String
+// function reverseString(str){
+//     let reversed = ""
+//     for(let i = str.length-1;i>=0;i--){
+//         reversed +=str[i]
+//     }
+//     return reversed
+// }
+// console.log(reverseString("hello")); // "olleh"
+
+function reverseString(str) {
+  return str.split("").reverse().join("");
 }
 
 // Example
-console.log(findMax([3, 8, 1, 5, 12])); // 12
+console.log(reverseString("hello"));     
