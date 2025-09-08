@@ -74,17 +74,180 @@ let n1 = 23;
 //     console.log("Access Denied")
 // }
 
-let a = 60
-let b = 80
-let c = 60
+// let a = 60
+// let b = 80
+// let c = 60
 
 
 
-if(a + b + c == 180)
+// if(a + b + c == 180)
+// {
+//     console.log("Is a triangle")
+// }
+// else
+// {
+//     console.log("Not a triangle")
+// }
+
+// let n = 5
+// for(let i = 1;i<=n;i++){
+//     let ans = ''
+//     for(let star = 1;star<=n;star++){
+//         ans += "* "
+//     }
+//     console.log(ans)
+// }
+
+
+//using while loop
+// let i = 1
+// while(i<=n){
+//     let ans = ""
+//     let j = 1
+//     while(j<=n){
+//         ans +="* "
+//         j++
+//     }
+//     console.log(ans)
+//     i++
+// }
+
+//star triangle
+
+//let n = 5;
+
+// for(let row = 1;row<=n;row++){
+//     let ans = ""
+//     for(let star = 1;star<=row;star++){
+//         ans += "* "
+//     }
+//     console.log(ans)
+// }
+
+//using while loop
+// let row = 1;
+// while(row<=n){
+//     let ans = ""
+//     let star = 1
+//     while(star<=row){
+//         ans +="* "
+//         star++
+//     }
+//     console.log(ans)
+//     row++
+// }
+
+//number pattern
+
+// Repeated Number Pyramid
+
+// Right-Angled Number Triangle (with same numbers per row)
+
+//   let n = 5
+// for(let i = 1;i<=n;i++){
+//     let ans = ''
+//     for(let j = 1;j<=i;j++){
+//         ans += i +" "
+//     }
+//     console.log(ans)
+// }
+
+// Number Rectangle Pattern
+
+// for(let i = 1;i<=n;i++){
+//     let ans = ""
+//     for(let j = 1;j<=n;j++){
+//         ans +=j + " "
+//     }
+//     console.log(ans)
+// }
+
+// Right-Angled Number Triangle)
+// for(let i = 1;i<=n;i++){
+//     let ans = ""
+//     for(let j = 1;j<=i;j++){
+//         ans +=j + " "
+//     }
+//     console.log(ans)
+// }
+
+//Inverted Pyramid Pattern (or Inverted Triangle Pattern)
+
+// let n = 5
+// for(let row = 1;row<=n;row++){
+//     let ans =""
+//     for(let star = 1;star<=n-row+1;star++){
+//         ans +="* "
+//     }
+//     console.log(ans)
+// }
+ 
+//   Pyramid Pattern / Right Pyramid/Centered Pyramid Pattern/Equilateral Triangle Star Pattern
+
+// let n = 5
+// let sc = 1
+// for(let row = 1;row<=n;row++){
+//     let ans = ""
+//     let spc = 1
+//     while(spc<=n-row){
+//         ans +=" "
+//         spc++
+//     }
+//     let str = 1
+//     while(str<=sc){
+//         ans +="*"
+//         str++
+//     }
+//     sc+=2
+//     console.log(ans)
+// }
+
+// let n = 5
+// for(let r = 1;r<=n;r++){
+//     let ans =""
+//     let sp = 1
+//     while(sp<=n-r){
+//         ans +=" "
+//         sp++
+//     }
+//     let st= 1
+//     while(st<=2 * r - 1){
+//         ans +="*"
+//         st++
+//     }
+//     console.log(ans)
+// }
+
+//Diamond Pattern (Half Diamond / Rhombus variation)
+
+let n = 5
+let spc = Math.floor(n / 2) 
+let stc = 1
+
+for(let r = 1; r <= n; r++)
 {
-    console.log("Is a triangle")
-}
-else
-{
-    console.log("Not a triangle")
+    let ans = ""
+    let sp = 1
+    while(sp <= spc)
+    {
+        ans += "  "
+        sp++
+    }
+    let st = 1
+    while(st <= stc)
+    {
+        ans += "* "
+        st++
+    }
+    console.log(ans)
+    if(r >= Math.floor(n/2) + 1)
+    {
+        spc++
+        stc -= 2
+    }
+    else
+    {
+        spc--
+        stc+=2
+    }
 }
