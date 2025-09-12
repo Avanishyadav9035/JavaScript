@@ -136,6 +136,100 @@
 // console.log(5 + 2 + "3");
 
 
-let str = "OpenAI";
-let rev = str.split("").reduce((acc, ch) => ch + acc, "");
-console.log(rev);
+// let str = "OpenAI";
+// let rev = str.split("").reduce((acc, ch) => ch + acc, "");
+// console.log(rev);
+
+
+//Ques.(3) “Find Duplicate Characters in a String”
+//1. Using Hash Map (Most Common Approach)
+
+// function findDuplicate(str){
+//     let freq = {}
+//     let duplicates= {}
+
+//     for(let char of str){
+//         freq[char] =(freq[char] || 0) + 1;
+//     }
+
+//     for(let char in freq){
+//         if(freq[char]>1){
+//             duplicates[char] = freq[char]
+//         }
+//     }
+//     return duplicates
+// }
+// console.log(findDuplicate('programming'))
+
+// Time Complexity: O(n)
+// Space Complexity: O(k) (k = unique characters)
+
+
+//2.Using set
+
+// function findDuplicate(str){
+//     let seen = new Set();
+//     let duplicates = new Set()
+
+//     for(let char of str){
+//         if(seen.has(char)){
+//             duplicates.add(char)
+//         } else {
+//             seen.add(char)
+//         }
+//     }
+//     return [...duplicates];
+// }
+// console.log(findDuplicate("programming"))
+
+// Returns just the duplicate characters.
+
+//3.3. Without Extra Space (Naive Approach)
+
+// function findDuplicate(str){
+//     let duplicates = []
+//     for(let i = 0;i<str.length;i++){
+//         for(let j = i+1;j<str.length;j++){
+//             if(str[i] === str[j] && !duplicates.includes(str[i])){
+//                 duplicates.push(str[i])
+//             }
+//         }
+//     }
+//     return duplicates;
+// }
+// console.log(findDuplicate("programming"))
+
+//Ques.4-Anagrams-Two strings are anagrams if they contain the same characters in the same frequency, but order can be different.
+
+//1. Using Sorting
+
+// function isAnagram(str1,str2){
+//      if(str1.length !==str2.length) return false;
+
+//      return str1.split("").sort().join("") === str2.split("").sort().join("");
+// }
+// console.log(isAnagram("listen", "silent")); // true
+// console.log(isAnagram("hello", "world"));   // false
+
+// Time Complexity: O(n log n) (because of sorting).
+
+//2. Using Hash Map (Optimized O(n))
+
+function isAnagram(str1, str2){
+    if(str1.length !==str2.length) return false
+    let freq = {}
+
+     for(let char of str1){
+        freq[char] = (freq[char] || 0) + 1
+     }    
+
+     for(let char of str2){
+        if(!freq[char]) return false;
+        freq[char]--
+     }
+     return true
+}
+
+console.log(isAnagram("listen", "silent")); // true
+console.log(isAnagram("triangle", "integral")); // true
+console.log(isAnagram("hello", "world"));   // false
