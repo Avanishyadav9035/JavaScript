@@ -233,3 +233,6 @@ function isAnagram(str1, str2){
 console.log(isAnagram("listen", "silent")); // true
 console.log(isAnagram("triangle", "integral")); // true
 console.log(isAnagram("hello", "world"));   // false
+
+// Time Complexity: O(n)
+// Space Complexity: O(k) (k = unique characters)
