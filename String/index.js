@@ -215,24 +215,130 @@
 
 //2. Using Hash Map (Optimized O(n))
 
-function isAnagram(str1, str2){
-    if(str1.length !==str2.length) return false
-    let freq = {}
+// function isAnagram(str1, str2){
+//     if(str1.length !==str2.length) return false
+//     let freq = {}
 
-     for(let char of str1){
-        freq[char] = (freq[char] || 0) + 1
-     }    
+//      for(let char of str1){
+//         freq[char] = (freq[char] || 0) + 1
+//      }    
 
-     for(let char of str2){
-        if(!freq[char]) return false;
-        freq[char]--
-     }
-     return true
-}
+//      for(let char of str2){
+//         if(!freq[char]) return false;
+//         freq[char]--
+//      }
+//      return true
+// }
 
-console.log(isAnagram("listen", "silent")); // true
-console.log(isAnagram("triangle", "integral")); // true
-console.log(isAnagram("hello", "world"));   // false
+// console.log(isAnagram("listen", "silent")); // true
+// console.log(isAnagram("triangle", "integral")); // true
+// console.log(isAnagram("hello", "world"));   // false
 
 // Time Complexity: O(n)
 // Space Complexity: O(k) (k = unique characters)
+
+//Ques.6 🔹 Problem Statement
+
+//Given a string, count how many vowels and consonants it contains.
+
+//1. Simple loop approach
+// function countVowlesConsonants(str){
+//    str = str.toLowerCase()
+//    let vowels = "aeiou";
+//    let vCount = 0, cCount = 0;
+   
+//    for(let char of str){
+//       if(/[a-z]/.test(char)){ // check alphabet only
+//           if(vowels.includes(char)){
+//             vCount++
+//           } else{
+//             cCount++;
+//           }
+//       }
+//    }
+//    return {vowels:vCount, consonants:cCount};
+// }
+// console.log(countVowlesConsonants("hello world"))
+
+//2. Using Regular Expressions
+
+// function countVowelsAndConsonants(str) {
+//   str = str.toLowerCase();
+
+//   let vowels = (str.match(/[aeiou]/g) || []).length;
+//   let consonants = (str.match(/[bcdfghjklmnpqrstvwxyz]/g) || []).length;
+
+//   return { vowels, consonants };
+// }
+
+// console.log(countVowelsAndConsonants("hello world"));
+// // { vowels: 3, consonants: 7 }
+
+//3.Count Spaces & Digits Too
+
+// function countCharacters(str){
+//   str = str.toLowerCase()
+//   let vCount = 0,cCount = 0, digitCount = 0, spaceCount = 0;
+
+//   for(let char of str){
+//    if("aeiou".includes(char)){
+//       vCount++
+//    } else if(/[a-z]/.test(char)){
+//       cCount++
+//    } else if(/[0-9]/.test(char)){
+//       digitCount++
+//    } else if(char === " "){
+//       spaceCount++
+//    }
+//   }
+//   return {vowels:vCount, consonants:cCount, digits:digitCount, spaces:spaceCount}
+// }
+// console.log(countCharacters("Hello World 123"))
+
+//Ques.6 Find First Non-Repeating Character
+
+//1.1. Using Hash Map (Efficient O(n))
+// function firstNonRepeatingChar(str){
+//    let freq = {}
+
+//    // Count frequency of each character
+//    for(let char of str){
+//       freq[char] = (freq[char] || 0) + 1
+//    }
+//    // Find first character with frequency 1
+//    for(let char of str){
+//       if(freq[char] === 1){
+//          return char
+//       }
+//    }
+//    return null
+// }
+// console.log(firstNonRepeatingChar("swiss"))
+
+
+//2. Using Map (Preserves Order)
+// function firstNonRepeatingChar(str){
+//     let map = new Map()
+
+//     for(let char of str){
+//       map.set(char, (map.get(char) || 0) + 1)
+//     }
+//     for(let [char, count] of map){
+//         if(count == 1) return char;
+//     }
+//     return null
+// }
+// console.log(firstNonRepeatingChar("swiss"))
+
+//3. Naive Approach (O(n²))
+
+function firstNonRepeatingChar(str){
+    for(let i = 0;i<str.length;i++){
+      let char = str[i]
+      if(str.indexOf(char) === str.lastIndexOf(char)){
+         return char
+      }
+    }
+    return null
+} 
+console.log(firstNonRepeatingChar("swiss"))
