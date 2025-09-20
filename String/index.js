@@ -295,7 +295,7 @@
 // }
 // console.log(countCharacters("Hello World 123"))
 
-//Ques.6 Find First Non-Repeating Character
+//Ques.7 Find First Non-Repeating Character
 
 //1.1. Using Hash Map (Efficient O(n))
 // function firstNonRepeatingChar(str){
@@ -332,13 +332,103 @@
 
 //3. Naive Approach (O(n²))
 
-function firstNonRepeatingChar(str){
-    for(let i = 0;i<str.length;i++){
-      let char = str[i]
-      if(str.indexOf(char) === str.lastIndexOf(char)){
-         return char
-      }
+// function firstNonRepeatingChar(str){
+//     for(let i = 0;i<str.length;i++){
+//       let char = str[i]
+//       if(str.indexOf(char) === str.lastIndexOf(char)){
+//          return char
+//       }
+//     }
+//     return null
+// } 
+// console.log(firstNonRepeatingChar("swiss"))
+
+
+//7.Remove All Duplicates from a String
+//1. Using Set (Simple & Clean)
+
+// function removeDuplicates(str){
+//     return [...new Set(str)].join("")
+// }
+// console.log(removeDuplicates("programming")); // "progamin"
+// console.log(removeDuplicates("hello"));       // "helo"
+
+//2. Using Hash Map
+// function removeDuplicates(str){
+//       let seen ={}
+//       let result = ""
+//       for(let char of str){
+//         if(!seen[char]){
+//             seen[char] = true
+//             result +=char
+//         }
+//       }
+//       return result
+// }
+// console.log(removeDuplicates("programming")); 
+// console.log(removeDuplicates("hello"));    
+
+//3. Without Extra Space (Naive O(n²))
+
+// function removeDuplicates(str){
+//     let result = ""
+//     for(let i = 0;i<str.length;i++){
+//         if(result.indexOf(str[i] === -1)){
+//             result +=str[i]
+//         }
+//     }
+//     return result
+// }
+// console.log(removeDuplicates("hello"));    
+
+
+//8.Longest Substring Without Repeating Characters (Sliding Window)
+
+// 🔹 What are substrings of "abcdef"?
+
+// A substring is a continuous part of the string.
+// Total number of substrings = n × (n + 1) / 2
+
+// function getAllSubString(str){
+//     let result = [];
+//     for(let i = 0;i<str.length;i++){
+//         for(let j = i+1;j<=str.length;j++){
+//             result.push(str.substring(i, j))
+//         }
+//     }
+
+//     return result;
+// }
+// console.log(getAllSubString("abcdef"))
+
+
+// let str = "hello";
+// console.log(str.substring(1, 4)); // "ell" (from index 1 to 3)
+
+// let str = "hello";
+// console.log(str.slice(1, 4)); // "ell"
+
+// let str = "hello";
+// console.log(str.substr(1, 3)); // "ell"
+
+function lengthOfLongestSubstring(s) {
+  let maxLen = 0;
+
+  for (let i = 0; i < s.length; i++) {
+    let seen = new Set();
+    let currentLen = 0;
+
+    for (let j = i; j < s.length; j++) {
+      if (seen.has(s[j])) break;
+      seen.add(s[j]);
+      currentLen++;
     }
-    return null
-} 
-console.log(firstNonRepeatingChar("swiss"))
+
+    maxLen = Math.max(maxLen, currentLen);
+  }
+
+  return maxLen;
+}
+
+console.log(lengthOfLongestSubstring("abcabcbb")); // 3
+ 
