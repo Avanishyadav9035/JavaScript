@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced DOM APIs</title>
+</head>
+<body>
+    <!-- 1. closest() → Find nearest parent with selector -->
+    <div class="card">
+      <div class="content">
+       <button id="btn">Click Me</button>
+      </div>
+    </div>
+<!-- 2. matches() → Check if element matches a selector -->
+    <ul id="list">
+      <li class="fruit">Apple</li>
+      <li>Carrot</li>
+    </ul>
+
+    <!-- 3. dataset → Custom data-* attributes -->
+     <button id="userBtn" data-id="101" data-role="admin">User Info</button>
+<!-- 
+     4. getBoundingClientRect() → Element size & position -->
+     <div id="box" style="width:100px; height:100px; background:red; margin:30px;"></div>
+
+     <!-- 5. scrollIntoView() → Auto-scroll to element -->
+      <div style="height:500px;"></div>
+      <p id="target"> You found me!</p>
+      <button id="scrollBtn">Scroll to Target</button>
+
+      <!-- 6. Clipboard API → Copy to clipboard -->
+       <input type="text" id="copyText" value="Hello DOM!">
+       <button id="copyBtn">Copy</button>
+
+       <!-- 7. Intersection Observer API → Detect element visibility -->
+        <div style="height:500px;"></div>
+       <img id="lazyImg" data-src="https://via.placeholder.com/300" width="300">
+
+    <script src="./Advanced DOM APIs.js"></script>
+</body>
+</html>

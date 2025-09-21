@@ -5,11 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Bubbling and Event Capturing</title>
 </head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    #fruits {
+        list-style-type: circle;
+    }
+</style>
 <body>
     <div id="parent" style="padding: 20px; background:lightblue">
         Parent
         <button id="child">Child Button</button>
     </div>
+
+    <form id="myForm">
+        <input type="text" placeholder="inter your name">
+        <input type="email" placeholder="inter your email">
+        <button type="submit">Submit</button>
+    </form>
+
+  <h1>Fruits</h1>
+  <ul id="fruits">
+   <li>Mango</li>
+   <li>Banana</li>
+   <li>Orange</li>
+  </ul>
+
+  <div id="parent1" style="padding:20px; background:lightblue;">
+  Parent
+  <div id="child1" style="padding:20px; background:lightgreen;">
+    Child
+    <button id="innerBtn">Click Me</button>
+  </div>
+</div>
+  
     <script src="./EventPropagation.js"></script>
 </body>
 </html>
