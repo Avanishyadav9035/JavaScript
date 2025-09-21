@@ -21,7 +21,7 @@
      </form> -->
 
      <!-- 2. Form Events: input, change, submit -->
-      <input type="text" id="liveinput" placeholder="Type here..."><br><br>
+      <!-- <input type="text" id="liveInput" placeholder="Type here..."><br><br>
       <select  id="dropdown">
         <option value="js">JavaScript</option>
         <option value="py">Python</option>
@@ -30,6 +30,24 @@
       <form id="testForm">
         <input type="text" placeholder="enter something">
         <button type="submit">Go</button>
+      </form> -->
+
+
+      <!-- SignUp form -->
+
+      <form id="signupform">
+        <input type="text"  id="fullname" placeholder="Full Name" required><br><br>
+        <input type="email" id="email" placeholder="Email" required><br><br>
+        <label>
+          <input type="radio" name="gender" value="Male" checked>Male
+        </label>
+        <label>
+          <input type="radio" name="gender" value="Female">Female
+        </label><br><br>
+        <label>
+          <input type="checkbox" id="terms">Accept Terms & Conditions
+        </label><br><br>
+        <button type="submit">Register</button>
       </form>
 
      <script src="./index.js"></script>
