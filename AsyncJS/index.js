@@ -145,3 +145,58 @@
 
 // console.log("End")
 // Promise (microtask) runs before Timeout (macro task).
+
+
+// 🔹 1. Callbacks
+
+//  Create a function that simulates fetching data with a callback.
+
+// function getData(callback){
+//     console.log("Fetching data...");
+//     setTimeout(()=>{
+//         callback("data received")
+//     }, 2000)
+// }
+// getData((result)=>{
+//     console.log(result)
+// });
+
+//🔹 2. Promises
+// Rewrite the above using Promises.
+
+// function getData(){
+//     return new Promise((resolve, reject)=>{
+//         setTimeout(()=>{
+//             resolve("Data loaded with Promise!")
+//         }, 2000)
+//     })
+// }
+
+// getData().then(res=>console.log(res))
+
+
+//🔹 3. Promise Methods
+
+// Try using Promise.all and Promise.race.
+
+// const p1 = new Promise(res=>setTimeout(()=>res("First"),1000))
+// const p2 = new Promise(res=>setTimeout(()=>res("Second"),1000))
+// Promise.all([p1,p2]).then(res=>console.log("All:", res))
+// Promise.race([p1,p2]).then(res=>console.log("Race:", res))
+
+
+// async function getData() {
+//     try {
+//          const result = await new Promise(res=>setTimeout(()=>res("User Data"), 2000))
+//          console.log(result)
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
+// getData()
+
+
+// console.log("Start")
+// setTimeout(()=>console.log("Settimeout"),0)
+// Promise.resolve().then(()=>console.log("Promise"))
+// console.log("End")
