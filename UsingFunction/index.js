@@ -1,20 +1,20 @@
 //(1) write a function that takes a string and return the count of vowels (a,e,i,o,u) .The count should be case-insensitive.
 
-function countVowels(str){
-    // Convert to lowercase for case-insensitive check
-    const lowerStr = str.toLowerCase();
-    const vowels = ['a','e','i','o','u'];
-    let count = 0;
+// function countVowels(str){
+//     // Convert to lowercase for case-insensitive check
+//     const lowerStr = str.toLowerCase();
+//     const vowels = ['a','e','i','o','u'];
+//     let count = 0;
 
-    for(let char of lowerStr){
-        if(vowels.includes(char)){
-            count++
-        }
-    }
-    return count;
-}
-console.log(countVowels("Programming")); // 3
-console.log(countVowels("HELLO World")); // 3
+//     for(let char of lowerStr){
+//         if(vowels.includes(char)){
+//             count++
+//         }
+//     }
+//     return count;
+// }
+// console.log(countVowels("Programming")); // 3
+// console.log(countVowels("HELLO World")); // 3
 
 //(2)write a function that takes an array of integers and return a new array with all duplicate
 
@@ -26,16 +26,16 @@ console.log(countVowels("HELLO World")); // 3
 
 // 🔹 Without using Set (manual way)
 
-function removeDuplicates(arr){
-    let uniqueArr = []
-    for(let num of arr){
-        if(!uniqueArr.includes(num)){
-            uniqueArr.push(num)
-        }
-    }
-    return uniqueArr
-}
-console.log(removeDuplicates([1, 2, 2, 3, 3, 4, 4, 4, 5]))
+// function removeDuplicates(arr){
+//     let uniqueArr = []
+//     for(let num of arr){
+//         if(!uniqueArr.includes(num)){
+//             uniqueArr.push(num)
+//         }
+//     }
+//     return uniqueArr
+// }
+// console.log(removeDuplicates([1, 2, 2, 3, 3, 4, 4, 4, 5]))
 
 // Solution 1: Using Math.max() with spread operator
 
@@ -77,10 +77,25 @@ console.log(removeDuplicates([1, 2, 2, 3, 3, 4, 4, 4, 5]))
 // }
 // console.log(reverseString("hello")); // "olleh"
 
-function reverseString(str) {
-  return str.split("").reverse().join("");
+// function reverseString(str) {
+//   return str.split("").reverse().join("");
+// }
+
+// // Example
+// console.log(reverseString("hello"));     
+
+ //Print Prime number
+
+ function isPrime(num) {
+    if (num < 2) return false;
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) return false;
+    }
+    return true;
 }
 
-// Example
-console.log(reverseString("hello"));     
-
+for (let i = 100; i <= 1000; i++) {
+    if (isPrime(i)) {
+        console.log(i);
+    }
+}
